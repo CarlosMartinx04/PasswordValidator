@@ -13,9 +13,11 @@ import java.io.IOException;
 public class HelloApplication extends Application {
 
     static TextField textFieldPassword = new TextField();
+    static Label labelLowercase = new Label("Minimum two lowercase letters");
+    static Label labelCapital = new Label("Minimum two capital letters");
+    static Label labelNumber = new Label("Minimum two numbers");
+    static Label labelNonAlphanumeric = new Label("Minimum two non-alphanumeric characters");
     static Label labelLimit = new Label("Minimum twelve characters");
-
-
 
     @Override
     public void start(Stage stage) throws IOException, InterruptedException {
@@ -24,24 +26,17 @@ public class HelloApplication extends Application {
         l.start();
         Label labelPassword = new Label();
         labelPassword.setText("Put the password");
-
         textFieldPassword.setPromptText("Password");
 
-//        Label labelLowercase = new Label("Minimum two lowercase letters");
-//        labelLowercase.setStyle("-fx-text-fill: red;");
-//        Label labelCapital = new Label("Minimum two capital letters");
-//        labelCapital.setStyle("-fx-text-fill: red;");
-//        Label labelNumber = new Label("Minimum two numbers");
-//        labelNumber.setStyle("-fx-text-fill: red;");
-//        Label labelNonAlphanumeric = new Label("Minimum two non-alphanumeric characters");
-//        labelNonAlphanumeric.setStyle("-fx-text-fill: red;");
-
+        labelLowercase.setStyle("-fx-text-fill: red;");
+        labelCapital.setStyle("-fx-text-fill: red;");
+        labelNumber.setStyle("-fx-text-fill: red;");
+        labelNonAlphanumeric.setStyle("-fx-text-fill: red;");
         labelLimit.setStyle("-fx-text-fill: red;");
 
         VBox centerContainer = new VBox();
-        centerContainer.getChildren().addAll(labelPassword, textFieldPassword,
-//                labelLowercase, labelCapital, labelNumber, labelNonAlphanumeric,
-                  labelLimit);
+        centerContainer.getChildren().addAll(labelPassword, textFieldPassword, labelLowercase,
+                labelCapital, labelNumber, labelNonAlphanumeric, labelLimit);
 
         borderPane.setCenter(centerContainer);
 
